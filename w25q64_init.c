@@ -3,7 +3,7 @@
 
 void bus_init(){
     RCC->AHB1ENR |=(1<<1);
-    volatile uint32_t dummy = RCC->AHB1ENR; // read back — forces clock enable to settle
+    volatile uint32_t dummy = RCC->AHB1ENR; // read back ï¿½ forces clock enable to settle
     RCC->APB2ENR |=(1<<12);
     dummy = RCC->APB2ENR; // read back
     RCC->APB1ENR |=(1<<18);
@@ -97,11 +97,11 @@ void write_char(char character){
   }   
  
 	
-static inline void CS_low(){
+ void CS_low(){
 GPIOB->ODR &=~(1<<2);
 	
 }
-static inline void CS_high(){
+ void CS_high(){
 
 GPIOB->ODR |=(1<<2);
 }
