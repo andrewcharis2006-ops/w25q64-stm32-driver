@@ -53,7 +53,14 @@ It demonstrates hardware-level configuration of the SPI and USART peripherals, r
 ### Example: Reading the JEDEC ID
 ```c
 // Output should be: EF 40 17
+CS_low();
 spi_transfer(0x9F);
+
 uint8_t mfg_id = spi_transfer(0x00);
 uint8_t mem_type = spi_transfer(0x00);
 uint8_t capacity = spi_transfer(0x00);
+void CS_high();
+
+write_HEX(mfg_id);
+write_HEX(mem_type);
+write_HEX(capacity);
