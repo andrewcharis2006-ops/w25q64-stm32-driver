@@ -1,0 +1,12 @@
+# Keil build files and temporary objects
+*.o
+*.d
+*.crf
+*.htm
+*.map
+*.lnp
+*.axf
+*.hex
+*.build_log.htm
+Objects/
+Listings/
